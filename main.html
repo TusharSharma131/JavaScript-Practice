@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<head>
+ <title>Practice</title>
+</head>
+
+<body>
+<div class="container">
+<p>This is first paragraph from 1st div</p>
+<p>This is second paragraph from 1st div</p>
+<p id="demo"></p>
+</div>
+
+
+
+<script>
+
+//------------------------INNER and OUTER HTML-----------------------------//
+
+// let one = document.createElement('div');
+// one.innerHTML='<p>This is second paragraph from 2nd div</p>';
+// console.log(one.innerHTML); 
+
+// //Code for Output of OuterHTML
+// let p = one.outerHTML;
+// console.log(p);  
+
+// let d = document.body.firstElementChild.firstElementChild;
+// d.innerHTML = 'Welcome to my Site';
+
+// let r = document.body.firstElementChild.firstElementChild.nextElementSibling;
+// r.innerHTML = 'Hey, I am JavaScript Learner';
+
+
+// let d = document.getElementsByTagName('p');
+// d[0].innerHTML = 'Informatics Practices';
+// d[1].innerHTML = 'Mathematics';
+
+
+//----------------------------------Alert----------------------------------//
+
+// let a = alert('Hacking Webiste... Please wait....');
+// document.write(a);
+
+//-------------Try to insert values of Object in the document-------------//
+
+// const person ={
+
+//     fname : 'Tushar',
+//     lname : 'Sharma',
+//     id : 1,
+// };
+
+// let txt = "";
+// for( let i in person) // for in 
+// {
+//     txt += person[i] + " ";
+// }
+//  document.getElementById('demo').innerHTML = txt;
+
+//--------------------------Map, Filter and Reduce-------------------------//
+//--------------------------Map-------------------------------------------//
+// let arr = [23,45,56];
+// let a = arr.map((value)=>{
+
+//     console.log(value);
+//     return value+1;
+// });
+// console.log(a);
+// console.log(typeof a); // object
+
+//----------------------------Filter----------------------------------------//
+
+// let num = [0,28,26,35,12,4,7,9,5]
+// let x = num.filter((rex)=>{
+
+//     return rex<12;
+// })
+// console.log(x);
+// console.log(typeof num); //object
+// console.log(typeof x);   //object
+
+//---------------------Maximum Sum of array with Reduce function--------------------//
+
+// let num1 = [2,3,4,5,1];
+// let v = (s,t)=>{
+
+//     return s+t;
+// };
+// let num3 = num1.reduce(v);
+// console.log(num3);
+
+//---------------------Make Factorial Program with Reduce Function-------------------//
+
+// let num = [1,2,3,4,5]
+// let r = (p,q)=>{
+
+//     return p*q;
+// }
+
+// let num3 = num.reduce(r);
+// console.log(num3);
+
+
+//--------------------------------Prompt and Confirm------------------------------//
+
+// let writes = confirm("Do you want to write in the page?");
+
+// if(writes)
+// {
+//   let a =prompt("Ok, If you want to write then write here");
+//   document.write(a);
+// }
+// else{
+//     document.write("Please allow me to write here...."); 
+// }
+// console.log(typeof writes);  // boolean
+// console.log(typeof a); // undefined because prompt used in scope and console.log done in last. 
+
+//----------------------Another Example of Prompt-------------------------//
+
+// let b = prompt("Write here anything");
+// document.write(b);
+// console.log(typeof b);  // String 
+
+//---------------------SetTimeout OR  SetInterval------------------------//
+
+// let a = setTimeout(()=>{
+//     alert("I am Inside setTimeout, executes only once");
+// },5000);
+
+// console.log(a); // on console it will give value 1 that is timerID.
+// console.log(typeof a); // number
+
+//-----------------------setTimeout with explicit function-----------------//
+
+// function calculator(a,b){
+//     document.write("The addition of a and b is ", a+b,"<br/>");
+//     document.write("The subtraction of a and b is ", a-b,"<br/>");
+//     document.write("The multiplication of a and b is ", a*b,"<br/>");
+//     document.write("The division of a and b is ", a/b,"<br/>");
+//     document.write("The reminder of a and b is ", a%b,"<br/>");
+// }
+
+// document.getElementById('demo').innerHTML = setTimeout(calculator, 4000, 2, 3);
+
+//------------------------------setInterval--------------------------------//
+
+// let a = setInterval(()=>{
+
+//     alert("I am inside setInterval and I execute regularly in given time");
+// },3000);
+
+//-------------------------------Promises---------------------------------//
+
+// let p1 =  new Promise((resolve,reject)=>{
+//     console.log("Promise executing.....");
+//     setTimeout(()=>{
+//      resolve('Promise Executed Successfully');
+//     },2000)
+// });
+
+// let p2 = new Promise((resolve,reject)=>{
+//     console.log("Promise executing....");
+//     setTimeout(()=>{
+//     reject('Something went wrong');
+//     },3000)
+// });
+
+// p1.then((value)=>{
+//     console.log(value);
+// });
+
+// p2.then((value)=>{
+//   console.log(value);
+// });
+
+//------------------------Error Handling with then and catch--------------------//
+
+// p2.then((value=>{
+//     console.log(value);
+// })).catch((error)=>{
+//     console.log("Error Handled Successfully !!");
+// });
+
+//---------------------Assign Multiple Handler to Promise----------------------//
+
+// let p1 = new Promise((resolve,reject)=>{
+//     console.log("Data Fetching from site, Please wait...");
+//     setTimeout(()=>{
+//         resolve("UserID : 001");
+//     },2000)
+// });
+
+// p1.then((value)=>{
+//     console.log("Username: TusharSharma");
+// });
+// p1.then((value)=>{
+//     console.log("Password: qluo0031");
+// });
+
+//-------------------------------Promise methods----------------------------//
+//-------------------------------Promise.all--------------------------------//
+
+// let p1 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve("UserID : 01")
+//     },2000)
+// });
+
+// let p2 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve("UserID : 02")
+//     },4000)
+// });
+
+// let p3 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         reject("Something went wrong")
+//     },6000)
+// });
+
+// let p = Promise.all([p1,p2,p3]);
+// p.then((value)=>{
+//     console.log(p);
+// })
+
+//------------------------------Promise.allSettled()-----------------------//
+
+// let p = Promise.allSettled([p1,p2,p3]);
+// p.then((value)=>{
+//     console.log(value);
+// });
+
+//------------------------------Promise.race()----------------------------//
+
+// let p = Promise.race([p1,p2,p3]);
+// p.then((value)=>{
+//     console.log(value); // Output --> 1st promise which have delay of 2000.
+// });
+
+//-----------------------------Promise.any()-----------------------------//
+
+// let p = Promise.any([p1,p2,p3]);
+// p.then((value)=>{
+// console.log(value); //Output --> 2nd promise if 1st promise is rejected,otherwise 1st 
+// });  
+
+//------------------------------Promise Chain Concept---------------------------//
+
+//Note: Promise have a Parallel Execution if they are not used in Chaining.In Promise     Chaining it have serial execution.
+
+//   async function data_taker(){
+//     let delhiWeather = new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve("32 deg");
+//         },4000)
+//     });
+
+//     let bangaloreWeather = new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve("22 deg");
+//         },6000)
+//     })
+
+//     console.log("Fetching Delhi Weather... Please Wait....");
+//     let DelhiW = await delhiWeather;
+//     console.log("Delhi Weather is : " + DelhiW);
+
+//     console.log("Fetching Bangalore Weather... Please Wait...");
+//     let BangaloreW = await bangaloreWeather;
+//     console.log("Bangalore weather is : " + BangaloreW);
+
+//     return [DelhiW, BangaloreW];
+//   }
+
+//   data_taker();
+
+
+//------------------Error Handling with try and catch method----------------//
+
+// setTimeout(()=>{
+//     console.log("Data receiving...Please Wait...");
+// },2000);
+// setTimeout(()=>{
+// try{
+//     console.log(tushar);  // tushar is undefined that's why create error here.
+// }
+// catch(error){
+//    console.log("Error Handled !! Process Continues..."); // error handled by catch.
+// }},3000);
+
+// setTimeout(()=>{
+//     console.log("Fetching username and password...");
+// },4000);
+
+// setTimeout(()=>{
+//     console.log("Credentials Fetched... Data received !!");
+// },5000)
+
+
+//---------------------------Custom Errors----------------------------------//
+
+// try{
+//     Tushar
+// }
+// catch(error){
+//     console.log(error.name); // ReferenceError
+//     console.log(error.message); // Tushar is not defined 
+// }
+
+//---------------------------Error with throw keyword------------------------//
+
+// try{
+//     throw new Error("Something went wrong");
+// }
+// catch(error){
+//     console.log("Error Detected...");
+//     console.log(error.name);   // Error
+//     console.log(error.message); // Something went wrong
+//     console.log(error.stack);  // Error: Something went wrong
+// }
+
+//-------------------------ReferenceError with throw-----------------------//
+
+// try{
+//     throw new ReferenceError("Failed to load");
+// }
+// catch(error){
+//     console.log(error.name); // ReferenceError
+//     console.log(error.message); // Failed to load 
+//     console.log(error.stack);  // ReferenceError: Failed to load
+// }
+
+//----------------------LoadScript function with Promises-------------------//
+
+// const loadscript = (src) => {
+//     return new Promise((resolve, reject) => {
+//         let script = document.createElement('script');
+//         script.type = 'text/javascript'; 
+//         script.src = src;
+//         document.body.appendChild(script);
+
+//         script.onload = () => {
+//             resolve(src);
+//         }
+//         script.onerror = () => {
+//             reject("Failed to load");
+//         }
+//     })
+// }
+
+// let p1 = loadscript("https://code.jquery.com/jquery-3.3.1.slim.min.js");
+// p1.then((value) => {
+//     console.log(value);
+// }).catch((error) => {
+//     console.log("Sorry, Script can't be loaded");
+// })
+
+</script>
+</body>
+</html>
